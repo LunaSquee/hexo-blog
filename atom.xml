@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Evert&#39;s Blog</title>
+  
+  <subtitle>Projects and Tutorials</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="https://lunasqu.ee/blog/"/>
+  <updated>2018-01-26T16:07:45.617Z</updated>
+  <id>https://lunasqu.ee/blog/</id>
+  
+  <author>
+    <name>Evert</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Welcome to my blog!</title>
+    <link href="https://lunasqu.ee/blog/2018/01/26/welcome-to-my-blog/"/>
+    <id>https://lunasqu.ee/blog/2018/01/26/welcome-to-my-blog/</id>
+    <published>2018-01-26T16:07:45.617Z</published>
+    <updated>2018-01-26T16:07:45.617Z</updated>
+    
+    <content type="html"><![CDATA[<p>So, I’ve decided to start a new blog using <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>.<br>I’ll probably be using this to share my projects and write some tutorials.</p><h2 id="Current-projects"><a href="#Current-projects" class="headerlink" title="Current projects"></a>Current projects</h2><p>I’m currently taking a break from writing code due to personal reasons, but I’m mainly working on my network, <a href="https://icynet.eu" target="_blank" rel="noopener">Icy Network</a>. The main project in the works is <a href="https://github.com/IcyNet/Episodes.Community" target="_blank" rel="noopener">Episodes.Community</a>, which is basically a site where people can watch and share links to their favorite TV shows and cartoons.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;So, I’ve decided to start a new blog using &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;.&lt;br&gt;I’ll probably be using 
+      
+    
+    </summary>
+    
+    
+      <category term="projects" scheme="https://lunasqu.ee/blog/tags/projects/"/>
+    
+      <category term="update" scheme="https://lunasqu.ee/blog/tags/update/"/>
+    
+  </entry>
+  
+</feed>
