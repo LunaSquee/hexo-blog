@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//analytics.icynet.eu/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+  
+  <title>Self-hosting, Part 1 | Evert&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Today I will be describing to you my experiences with self-hosting and how you can get started as well. I’m not going to go into detail in this article about how to install and configure anything, but">
+<meta name="keywords" content="linux,tutorial">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Self-hosting, Part 1">
+<meta property="og:url" content="https://lunasqu.ee/blog/2019/02/23/Self-hosting-part-1/index.html">
+<meta property="og:site_name" content="Evert&#39;s Blog">
+<meta property="og:description" content="Today I will be describing to you my experiences with self-hosting and how you can get started as well. I’m not going to go into detail in this article about how to install and configure anything, but">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T21:17:18.777Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Self-hosting, Part 1">
+<meta name="twitter:description" content="Today I will be describing to you my experiences with self-hosting and how you can get started as well. I’m not going to go into detail in this article about how to install and configure anything, but">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Evert&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Evert&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">Projects and Tutorials</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lunasqu.ee/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Self-hosting-part-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/02/23/Self-hosting-part-1/" class="article-date">
+  <time datetime="2019-02-23T21:17:18.000Z" itemprop="datePublished">2019-02-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Self-hosting, Part 1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Today I will be describing to you my experiences with self-hosting and how you can get started as well.</p>
+<p>I’m not going to go into detail in this article about how to install and configure anything, but the websites for respective pieces of software have great documentation and you can always look for more information online. Followup blog posts may come in the future describing setups that I’ve created.</p>
+<h2 id="1-Hardware"><a href="#1-Hardware" class="headerlink" title="1. Hardware"></a>1. Hardware</h2><p>Believe it or not, you don’t actually need a server computer to host your websites, email or other networked software. You can use pretty much any old computer to do what you want. I know a guy who uses a laptop without a screen as a server, and quite successfully so. Your server could be anything, from an old Android phone to a router to an actual server computer, just as long as you have it connected to a network.</p>
+<p>I have personally been using <a href="https://www.raspberrypi.org/" target="_blank" rel="noopener">Raspberry Pi</a> computers for my personal servers. What you might learn the hard way, though, that you really don’t want to do many write operations on a simple SD card, instead, I recommend getting a 2.5” Hard Disk Drive or a even a Solid State Drive with a simple USB to SATA converter, which you can get cheap off <a href="https://www.ebay.com/sch/i.html?_from=R40&amp;_trksid=m570.l1313&amp;_nkw=usb+to+sata&amp;_sacat=0" target="_blank" rel="noopener">eBay</a> or <a href="https://www.aliexpress.com/wholesale?SearchText=usb+to+sata" target="_blank" rel="noopener">AliExpress</a>. I’ve had quite a few corrupted SD cards on my Raspberry Pi’s due to high amount of concurrent writes.</p>
+<h3 id="1-1-Hosting-services"><a href="#1-1-Hosting-services" class="headerlink" title="1.1. Hosting services"></a>1.1. Hosting services</h3><p>For most of the heavy-lifting, though, I recommend using Virtual Private Servers for online services. I use a 10€/month cloud server from <a href="https://www.hetzner.com/cloud" target="_blank" rel="noopener">Hetzner</a> to host most of my websites, databases and email. I can only really recommend Hetzner and <a href="https://www.ovh.com/" target="_blank" rel="noopener">OVH</a> because I’ve had the best experiences with them, but you can search around the web for VPS hosting. Be sure to look at reviews and make sure to read the Terms of Service notices!</p>
+<p>If you have more money to spend, you can also look for hosted dedicated servers.</p>
+<p>With hosting services, you also avoid the problem of having to expose your IP address or open ports on your local network. If you don’t like your IP address being public or you simply are unable to open ports on your network, I strongly recommend that you get a low cost virtual private server instead of any local computer.</p>
+<h2 id="2-Operating-System"><a href="#2-Operating-System" class="headerlink" title="2. Operating System"></a>2. Operating System</h2><p>What you’re looking for here is an operating system based on the <a href="https://en.wikipedia.org/wiki/Linux_kernel" target="_blank" rel="noopener">Linux kernel</a>. I can recommend <a href="https://www.debian.org/intro/about" target="_blank" rel="noopener">Debian</a>, <a href="https://www.centos.org/" target="_blank" rel="noopener">CentOS</a> and <a href="https://www.archlinux.org/" target="_blank" rel="noopener">Arch Linux</a>. Linux systems are (mostly, there are paid enterprise solutions) completely free, in every sense of the word, and open source.</p>
+<p>If you run into any issues with Linux systems, or just want to know how to configure or use a certain program, an absolutely wonderful online resource is the <a href="https://wiki.archlinux.org/" target="_blank" rel="noopener">Arch Linux Wiki</a>, and you don’t even have to use Arch Linux in order for it to be useful to you.</p>
+<h2 id="3-Software"><a href="#3-Software" class="headerlink" title="3. Software"></a>3. Software</h2><p>There’s <em>a lot</em> of things you can run on your own server computer, so in this section, I’m going to tell you about some of the more common and more useful services.</p>
+<h3 id="3-1-Website-hosting"><a href="#3-1-Website-hosting" class="headerlink" title="3.1. Website hosting"></a>3.1. Website hosting</h3><p>Of course everybody wants to have a website. What would a self-hosted server be without a website?</p>
+<p>The first thing you need in order to run a website is a web server. For beginners and simple setups, the most popular choice is the <a href="https://httpd.apache.org/" target="_blank" rel="noopener">Apache HTTP Server</a>, however for more versatility and better (in my opinion) configuration and proxying, I recommend <a href="http://nginx.org/" target="_blank" rel="noopener">nginx</a> as well.</p>
+<p>For the actual content of the website, you also have <em>a lot</em> of options. A very good and popular free platform you can use is <a href="https://wordpress.org/" target="_blank" rel="noopener">WordPress</a>. Of course, there’s the possibility of writing a website yourself, either in PHP and HTML or just HTML and CSS.</p>
+<h3 id="3-2-Private-File-Cloud"><a href="#3-2-Private-File-Cloud" class="headerlink" title="3.2. Private File Cloud"></a>3.2. Private File Cloud</h3><p>If you’re like me and don’t like having your files on <strong>someone else’s computer</strong>, hosting a “file cloud” yourself is a good bet. The best software to do this (by far) is <a href="https://nextcloud.com/" target="_blank" rel="noopener">NextCloud</a>. It allows you to easily synchronize files between your computers and mobile phones and you always know that your files are safe in your own hands.</p>
+<p>Be warned though, this application server takes a good chunk of your computer resources, so you might need something more powerful than a Raspberry Pi for this one.</p>
+<h4 id="3-2-1-Online-Documents"><a href="#3-2-1-Online-Documents" class="headerlink" title="3.2.1. Online Documents"></a>3.2.1. Online Documents</h4><p>NextCloud can very easily help you transfer documents between your devices, but there’s also the option to integrate an Office platform, such as <a href="https://nextcloud.com/collaboraonline/" target="_blank" rel="noopener">Collabora Online</a>, which allows you to view and edit your Office documents on the go, just like Google Docs or Office 356 Online, but you’re in control!</p>
+<p>Be warned again, these applications are also a significant load on your server.</p>
+<h3 id="3-3-Mail-Server"><a href="#3-3-Mail-Server" class="headerlink" title="3.3. Mail Server"></a>3.3. Mail Server</h3><p>Okay, so you’ve got it in your head that you also want to host a mail server for yourself, but let me stop you right there. Setting up a mail server is <strong>a really tedious and time consuming task</strong> and you’ll probably end up giving up and using Gmail or Outlook in the end anyway. A misconfigured email server could also do a lot of harm, so please be careful with what you configure and always read the documentation if you really do plan on hosting your own mail server.</p>
+<p>If that didn’t scare you, you may proceed. Just know that you should <strong>NEVER</strong> host an open email relay unless you really know what you’re doing.</p>
+<h4 id="3-3-1-Mail-Transfer-Agent-MTA"><a href="#3-3-1-Mail-Transfer-Agent-MTA" class="headerlink" title="3.3.1. Mail Transfer Agent (MTA)"></a>3.3.1. Mail Transfer Agent (MTA)</h4><p>The MTA is the program used to send emails. It does not necessarily let you read/manage inboxes on its own.</p>
+<p>One of the more popular MTAs, and the one I use, is <a href="http://www.postfix.org/" target="_blank" rel="noopener">Postfix</a>. Creating the perfect configuration to meet your needs is, again, a tedious task. You can look for example configurations online and try them out yourself.</p>
+<h4 id="3-3-2-Mail-access-IMAP-POP3"><a href="#3-3-2-Mail-access-IMAP-POP3" class="headerlink" title="3.3.2. Mail access (IMAP, POP3)"></a>3.3.2. Mail access (IMAP, POP3)</h4><p>This is the application that actually allows you to access and store your emails on your server.</p>
+<p>The most popular software for this is <a href="https://www.dovecot.org/" target="_blank" rel="noopener">Dovecot</a>. Dovecot is really good at doing what it does and it allows you to set up mailboxes and can even do message sorting (<a href="https://wiki2.dovecot.org/Pigeonhole" target="_blank" rel="noopener">pigeonhole</a> sieve).</p>
+<h4 id="3-3-3-Mail-filtering"><a href="#3-3-3-Mail-filtering" class="headerlink" title="3.3.3. Mail filtering"></a>3.3.3. Mail filtering</h4><p>Mail filtering is what you would use to combat spam.</p>
+<p>A great free software for combating spam is <a href="https://spamassassin.apache.org/" target="_blank" rel="noopener">SpamAssassin</a> and you can use <a href="https://www.clamav.net/" target="_blank" rel="noopener">ClamAV</a> to detect viruses in incoming mail.</p>
+<h3 id="3-4-Database"><a href="#3-4-Database" class="headerlink" title="3.4. Database"></a>3.4. Database</h3><p>If you need a database, your own server is also a good place for that. For SQL databases, I recommend using <a href="https://mariadb.org/" target="_blank" rel="noopener">MariaDB</a>. For NoSQL, you could use <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a>. You’ll need a MariaDB database if you’re going to host WordPress on your server.</p>
+<h2 id="4-Communication"><a href="#4-Communication" class="headerlink" title="4. Communication"></a>4. Communication</h2><p>Communication is an important part of society. Did you know that there are free and open source solutions that you can put on your own server that allows you to communicate with your friends? Here are some that I have personally come in contact with and can recommend.</p>
+<p><strong>1. An aging, historical solution: IRC</strong><br>IRC (Internet Relay Chat) is an old text-based protocol used in ages old chat rooms. Believe it or not, it is still used to this day. IRC is a quick and easy way to communicate in text. A popular IRC server application is <a href="http://www.inspircd.org/" target="_blank" rel="noopener">inspIRCd</a>.</p>
+<p>I personally still host an IRC server for me and my friends.</p>
+<p><strong>2. Purely for voice chatting: Mumble</strong><br><a href="https://wiki.mumble.info/wiki/Main_Page" target="_blank" rel="noopener">Mumble</a> is a free and open source low latency voice chatting application. In order to host your own server for Mumble, you need <a href="https://wiki.mumble.info/wiki/Running_Murmur" target="_blank" rel="noopener">Murmur</a> (mumble-server).</p>
+<p><strong>3. Up-and-coming communication standard: Matrix</strong><br><a href="https://matrix.org/blog/home/" target="_blank" rel="noopener">Matrix</a> is a free and open source decentralized communication protocol. Anyone can host a server (called a homeserver) and people from different servers are able to communicate with each-other. The current go-to homeserver solution is <a href="https://matrix.org/docs/guides/installing-synapse" target="_blank" rel="noopener">Synapse</a>, however more options are coming in the future.</p>
+<p>As a disclaimer I’d like to say that Synapse is a large application and it might not be plausible for you to host it on your machine.</p>
+<p><strong>4. Simple and modern: Rocket.Chat</strong><br><a href="https://rocket.chat/" target="_blank" rel="noopener">Rocket.Chat</a> is a free and open source communication platform aimed for teams. Despite being aimed for teams, it’s also a great solution for chatting with your friends. It allows you to create rooms and also provides end-to-end encryption for messages.</p>
+<p>I’ve personally hosted a Rocket.Chat instance and can say that it is a good platform, however me and my buddies are old-school and like our IRC server more.</p>
+<h3 id="4-1-Your-own-social-network"><a href="#4-1-Your-own-social-network" class="headerlink" title="4.1. Your own social network!"></a>4.1. Your own social network!</h3><p>Have you ever thought about running a Twitter-like platform that you had full control over? Well, now you can! With <a href="https://joinmastodon.org/" target="_blank" rel="noopener">Mastodon</a>, you can create your own social networking platform, called an instance. Instances are joined together in a global federated network called the <a href="https://en.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse</a>, which allows you to communicate with anyone on any Mastodon (or other platform on the Fediverse) server without making multiple accounts.</p>
+<h2 id="Conculsion-for-now"><a href="#Conculsion-for-now" class="headerlink" title="Conculsion, for now.."></a>Conculsion, for now..</h2><p>There’s a lot of things you can do with your own server. Hopefully this blog post was of any use to you.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lunasqu.ee/blog/2019/02/23/Self-hosting-part-1/" data-id="cjshzm09p000hf1jo4n9wudce" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/tutorial/">tutorial</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/03/15/How-to-install-Arch-Linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to install Arch Linux</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/game/">game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/godot/">godot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/projects/">projects</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tutorial/">tutorial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/update/">update</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/game/" style="font-size: 10px;">game</a> <a href="/blog/tags/godot/" style="font-size: 10px;">godot</a> <a href="/blog/tags/linux/" style="font-size: 20px;">linux</a> <a href="/blog/tags/projects/" style="font-size: 20px;">projects</a> <a href="/blog/tags/tutorial/" style="font-size: 20px;">tutorial</a> <a href="/blog/tags/update/" style="font-size: 10px;">update</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/02/23/Self-hosting-part-1/">Self-hosting, Part 1</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/03/15/How-to-install-Arch-Linux/">How to install Arch Linux</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/02/03/Giving-a-shot-at-making-a-game-using-Godot-Engine-3-0/">Giving a shot at making a game using Godot Engine 3.0</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/01/26/welcome-to-my-blog/">Welcome to my blog!</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Evert<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
